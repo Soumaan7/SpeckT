@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create S Icon</title>
+</head>
+<body>
+    <canvas id="canvas" width="512" height="512"></canvas>
+    <script>
+        function createIcon(size) {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            // Blue background
+            ctx.fillStyle = '#3b82f6';
+            ctx.fillRect(0, 0, size, size);
+            
+            // White "S" letter
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size * 0.6}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('S', size / 2, size / 2);
+            
+            return canvas;
+        }
+        
+        // Create and download 192x192 icon
+        const icon192 = createIcon(192);
+        const link192 = document.createElement('a');
+        link192.download = 'icon-192x192.png';
+        link192.href = icon192.toDataURL();
+        link192.click();
+        
+        // Create and download 512x512 icon
+        setTimeout(() => {
+            const icon512 = createIcon(512);
+            const link512 = document.createElement('a');
+            link512.download = 'icon-512x512.png';
+            link512.href = icon512.toDataURL();
+            link512.click();
+        }, 500);
+    </script>
+</body>
+</html>
