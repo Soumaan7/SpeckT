@@ -16,7 +16,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAF0ndN7yMIRj_dcG2JUwHAXrvhWdukwM4",
+  apiKey: import.meta.env.VITE_APP_FIREBASE_API_KEY,
   authDomain: "transportapp-ebc27.firebaseapp.com",
   projectId: "transportapp-ebc27",
   storageBucket: "transportapp-ebc27.appspot.com",

@@ -1,3 +1,7 @@
+# Environment (keep real keys out of git)
+.env
+.env.local
+
 # Logs
 logs
 *.log
