@@ -90,7 +90,7 @@ const Map: React.FC<MapProps> = ({
   setSelectedBusId,
 }) => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAj183sN5BMcsZBhQcSOA_RZL4N5bvvVzU",
+    googleMapsApiKey: "AIzaSyBT47CnCm0NI4Qt1IfQOxq7Sk1RaQiOEk8",
   });
 
   const [selectedMarker, setSelectedMarker] = useState<string | null>(null);
