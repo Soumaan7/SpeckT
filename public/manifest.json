@@ -1,0 +1,22 @@
+{
+  "name": "SpeckT Transport App",
+  "short_name": "SpeckT",
+  "description": "A modern transport management app for students and drivers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["transportation", "education", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}

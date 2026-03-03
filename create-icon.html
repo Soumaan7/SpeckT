@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Creator</title>
+</head>
+<body>
+    <canvas id="canvas" width="512" height="512"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Blue background
+        ctx.fillStyle = '#3b82f6';
+        ctx.fillRect(0, 0, 512, 512);
+        
+        // White bus shape
+        ctx.fillStyle = 'white';
+        ctx.fillRect(128, 200, 256, 120);
+        
+        // Bus wheels
+        ctx.fillStyle = '#3b82f6';
+        ctx.beginPath();
+        ctx.arc(180, 360, 30, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.arc(332, 360, 30, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Download function
+        function downloadIcon(size) {
+            const newCanvas = document.createElement('canvas');
+            newCanvas.width = size;
+            newCanvas.height = size;
+            const newCtx = newCanvas.getContext('2d');
+            
+            newCtx.drawImage(canvas, 0, 0, size, size);
+            
+            const link = document.createElement('a');
+            link.download = `icon-${size}x${size}.png`;
+            link.href = newCanvas.toDataURL();
+            link.click();
+        }
+        
+        // Auto download both sizes
+        setTimeout(() => downloadIcon(192), 500);
+        setTimeout(() => downloadIcon(512), 1000);
+    </script>
+</body>
+</html>
